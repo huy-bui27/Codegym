@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const numcalls = parseFloat(prompt("Nhập số cuộc gọi:"));
+    const avgduration = parseFloat(prompt("Nhập thời gian gọi trung bình:"));
+    const callrate = 200;
+    const fixedcharge = 50000;
+    const extracharge = 20000;
+
+    let totalcost;
+
+    if (numcalls < 0 || avgduration < 0 || extracharge < 0) {
+        alert(`THông số đầu vào không hợp lệ. Vui lòng kiểm tra lại.`);
+    } else {
+        totalcost = (numcalls * avgduration * callrate) + fixedcharge;
+    }
+    if (avgduration > 7) {
+        totalcost = totalcost + extracharge;
+    }
+    alert("Tổng cước điện thoại là:" + totalcost.toFixed(0) + "đồng");
+</script>
+</body>
+</html>

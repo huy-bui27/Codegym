@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> Caculator</h1>
+<input type="number" id="mum1">
+<input type="number" id="mum2"><br><br>
+<button onclick="calculate ('+')">Calculate(+)</button>
+<button onclick="calculate ('-')">Calculate(-)</button>
+<button onclick="calculate ('*')">Calculate(*)</button>
+<button onclick="calculate ('/')">Calculate(/)</button>
+<div id="result"></div>
+<script>
+    function calculate(oper) {
+        const num1 = parseFloat(document.getElementById("mum1").value);
+        const num2 = parseFloat(document.getElementById("mum2").value);
+        let result;
+        switch (oper) {
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            case '/':
+                if (num2 === 0) {
+                    resul="Không thể chia cho số 0";
+                } else {
+                    result = num1 / num2;
+                }
+                break;
+            default:
+                result = "Toan tu khong hop le";
+        }
+        document.getElementById("result").textContent = result;
+    }
+</script>
+</body>
+</html>

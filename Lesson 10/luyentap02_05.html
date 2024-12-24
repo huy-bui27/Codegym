@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const a = parseFloat(prompt("Nhập số liền kề a:"));
+    const b = parseFloat(prompt("Nhập số liền kề a:"));
+    let c;
+
+    if (isNaN(a) || isNaN(b) || a <= 0 || b <= 0) {
+        alert("Vui lòng nhập các giá trị hợp lệ cho hai cạnh kề (phải là số dương).")
+    } else {
+        c = 1 / 2 * a * b;
+        alert("Diện tích tam giác vuông:" + c);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const sale = parseFloat(prompt("Nhập số doanh thu:"));
+    let hoahong = 0;
+    if (sale <= 5000000) {
+        hoahong = sale * 0.05;
+    } else if (sale <= 1000000) {
+        hoahong = sale * 0.1;
+    } else if (sale <= 20000000) {
+        hoahong = sale * 0.2;
+    } else {
+        hoahong = sale * 0.3;
+    }
+    alert(`Hoa hồng nhận được: ${hoahong.toLocaleString()} VND`);
+</script>
+</body>
+</html>

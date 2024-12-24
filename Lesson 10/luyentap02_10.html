@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const units = parseFloat(prompt("Nhập số điện:"));
+    let cost;
+    if (units <= 50) {
+        cost = units * 1678;
+    } else if (units <= 100) {
+        cost = 50 * 1678 + (units - 50) * 1734;
+    } else if (units <= 200) {
+        cost = 50 * 1678 + 50 * 1734 + (units - 100) * 2014;
+    } else if (units <= 300) {
+        cost = 50 * 1678 + 50 * 1734 + 100 * 2014 + (units - 200) * 2536;
+    } else {
+        cost = 50 * 1678 + 50 * 1734 + 100 * 2014 + 100 * 2536 + (units - 300) * 2834;
+    }
+    alert("Tổng giá điện phải trả là:" + cost.toString() + "VND");
+</script>
+</body>
+</html>
+<!--Biểu giá điện-->
+<!--Bậc tiêu thụ (kWh)	Đơn giá (VND/kWh)-->
+<!--0 - 50	1,678-->
+<!--51 - 100	1,734-->
+<!--101 - 200	2,014-->
+<!--201 - 300	2,536-->
+<!--Trên 300	2,834-->
+<!--Cách tính tiền điện-->
+<!--Tính tiền cho bậc đầu tiên (0 - 50 kWh):-->
+<!--Nếu tiêu thụ ≤ 50 kWh:-->
+<!--Chi phí = Số kWh × 1,678-->
+<!--Tính tiền cho bậc thứ hai (51 - 100 kWh):-->
+<!--Nếu tiêu thụ > 50 kWh và ≤ 100 kWh:-->
+<!--Chi phí = (50 × 1,678) + (Số kWh - 50) × 1,734-->
+<!--Tính tiền cho bậc thứ ba (101 - 200 kWh):-->
+<!--Nếu tiêu thụ > 100 kWh và ≤ 200 kWh:-->
+<!--Chi phí = (50 × 1,678) + (50 × 1,734) + (Số kWh - 100) × 2,014-->
+<!--Tính tiền cho bậc thứ tư (201 - 300 kWh):-->
+<!--Nếu tiêu thụ > 200 kWh và ≤ 300 kWh:-->
+<!--Chi phí = (50 × 1,678) + (50 × 1,734) + (100 × 2,014) + (Số kWh - 200) × 2,536-->
+<!--Tính tiền cho bậc thứ năm (trên 300 kWh):-->
+<!--Nếu tiêu thụ > 300 kWh:-->
+<!--Chi phí = (50 × 1,678) + (50 × 1,734) + (100 × 2,014) + (100 × 2,536) + (Số kWh - 300) × 2,834-->

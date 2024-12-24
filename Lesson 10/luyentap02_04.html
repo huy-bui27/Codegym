@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const a = parseFloat(prompt("Nhập chiều dài:"));
+    const b = parseFloat(prompt("Nhập chiều rộng:"));
+    let c;
+
+    if (isNaN(a) || isNaN(b) || a <= 0 || b <= 0) {
+        alert("Vui lòng nhập các giá trị hợp lệ cho hai cạnh kề (phải là số dương).")
+    } else if (a == b) {
+        alert("Lỗi: Hai cạnh không được bằng nhau. Vui lòng nhập lại.");
+    } else {
+        c = a * b;
+        alert("Diện tích hình chữ nhật:" + c)
+    }
+</script>
+</body>
+</html>

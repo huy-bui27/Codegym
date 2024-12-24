@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const a = parseFloat(prompt("Nhập cạnh a:"));
+    let b;
+
+    if (isNaN(a) || a <= 0) {
+        alert("Vui lòng nhập các giá trị hợp lệ cho hai cạnh kề (phải là số dương).")
+    } else {
+        b = a * a;
+        alert("Diện tích tam giác " + b);
+    }
+</script>
+</body>
+</html>

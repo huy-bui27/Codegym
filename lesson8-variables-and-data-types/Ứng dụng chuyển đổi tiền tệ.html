@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi tiền tệ</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #7b68ee; /* Lavender */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 15px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <label for="amount">Amount</label>
+    <input type="number" id="amount" value="1">
+
+    <label for="from Currency"> From Currency</label>
+    <select id="from Currency">
+        <option value="VND">Viet Nam</option>
+        <option value="USD">USD</option>
+        <option value="NDT">Trung Quoc</option>
+    </select>
+
+    <label for="to Currency"> To Currency</label>
+    <select id="to Currency">
+        <option value="USD">USD</option>
+        <option value="VND">Viet Nam</option>
+        <option value="NDT">Trung Quoc</option>
+    </select>
+    <button onclick="convert()">Convert</button>
+    <div id="result"></div>
+</div>
+<script>
+    function convert() {
+        const amount = parseFloat(document.getElementById(`amount`).value);
+        const fromCurrency = document.getElementById(`from Currency`).value;
+        const toCurrency = document.getElementById(`to Currency`).value;
+        let result;
+
+        if (fromCurrency === 'VND' && toCurrency === 'USD') {
+            result = amount * 0.00003938;
+        } else if (fromCurrency === 'USD' && toCurrency === 'VND') {
+            result = amount * 25.395;
+        } else if (fromCurrency === 'VND' && toCurrency === 'NDT') {
+            result = amount * 0.2868279978545266;
+        } else if (fromCurrency === 'NDT' && toCurrency === 'VND') {
+            result = amount * 3.48641;
+        } else if (fromCurrency === 'USD' && toCurrency === 'NDT') {
+            result = amount * 7.2839;
+        } else if (fromCurrency === 'NDT' && toCurrency === 'USD') {
+            result = amount * 0.1372;
+        } else {
+            result = "Vui lòng chọn loại tiền tệ khác nhau.";
+        }
+        document.getElementById("result").textContent = "Result: " + result + " " + toCurrency;
+    }
+</script>
+</body>
+</html>

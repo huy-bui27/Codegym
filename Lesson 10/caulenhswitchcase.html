@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .a1 {
+            width: 250px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+<form action="">
+    <h1>Kiểm tra số ngày trong tháng </h1>
+    <input class="a1" type="number" name="number" id="month" placeholder="Nhập số thứ tự của tháng (1-12)" min="1"
+           max="12">
+    <button onclick="convert()">Check</button>
+    <div id="result"></div>
+</form>
+<script>
+    function convert() {
+        const month = parseInt(document.getElementById('month').value);
+        switch (month) {
+            case 1:
+                alert("Tháng 1 có 31 ngày");
+                break;
+            case 2:
+                alert("Tháng 2 có 28 hoặc 29 ngày");
+                break;
+            case 3:
+                alert("Tháng 3 có 31 ngày");
+                break;
+            case 4:
+                alert("Tháng 4 có 30 ngày")
+                break;
+            case 5:
+                alert("Tháng 5 có 31 ngày");
+                break;
+            case 6:
+                alert("Tháng 6 có 30 ngày")
+                break;
+            case 7:
+                alert("Tháng 7 có 31 ngày");
+                break;
+            case 8:
+                alert("Tháng 8 có 31 ngày")
+                break;
+            case 9:
+                alert("Tháng 9 có 30 ngày");
+                break;
+            case 10:
+                alert("Tháng 10 có 31 ngày")
+                break;
+            case 11:
+                alert("Tháng 11 có 30 ngày");
+                break;
+            case 12:
+                alert("Tháng 12 có 31 ngày");
+                break;
+        }
+        document.getElementById("result").innerText = `${month}`;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const a = parseFloat(prompt("Nhập điểm bài kiểm tra:"));
+    const b = parseFloat(prompt("Nhập điểm bài kiểm giữa kỳ:"));
+    const c = parseFloat(prompt("Nhập điểm bài cuối kì:"));
+    const d = (a * 0.1) + (a * 0.3) + (c * 0.6);
+    if (d >= 8) {
+        alert(`Hoc sinh gioi`)
+    } else if (d >= 6.5) {
+        alert(`Hoc sinh kha`)
+    } else if (d >= 5) {
+        alert(`Hoc sinh trung binh`)
+    } else {
+        alert(`Hoc sinh yeu`)
+    }
+</script>
+</body>
+</html>

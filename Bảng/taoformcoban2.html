@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký học viên</title>
+  <style>
+    body {
+      background-color: paleturquoise;
+      font-family: sans-serif;
+    }
+
+    .container {
+      background-color: #FFFFE0;
+      width: 90%;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid black;
+    }
+
+    .header {
+      background-color: paleturquoise;
+      color: navy;
+      text-align: left;
+      padding: 10px;
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+
+    label {
+      color: navy;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+      width: calc(100% - 10px);
+      padding: 5px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    .radio-group {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .radio-group label {
+      margin-right: 15px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .radio-group input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    .buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: lightgray;
+      border: 1px solid gray;
+      cursor: pointer;
+      margin: 0 5px; /* Add some space between buttons */
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    ĐĂNG KÝ HỌC VIÊN
+  </div>
+  <form>
+    <label for="name">Họ và tên</label>
+   <input type="text" id="name" name="name">
+
+  <label for ="date">Ngày sinh</label>
+  <input type="date" id="date" name="date">
+
+  <label>Giới tính</label>
+    <div class="radio-group">
+      <label><input type="radio" name="gender" value="Nam">Nam</label>
+      <label><input type="radio" name="gender" value="Nữ">Nữ</label>
+    </div>
+
+  <label for ="address">Địa chỉ</label>
+  <textarea name="address" id="address" cols="10" rows="2"></textarea>
+
+  <label> Lớp</label>
+  <select id="class" name="class">
+    <option>--Chọn lớp--</option>
+    <option>A1</option>
+    <option>A2</option>
+    <option>A3</option>
+  </select>
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email">
+
+  <label for="phone">Điện thoại</label>
+  <input type="text" id="phone" name="phone">
+
+  <div class="buttons">
+    <button type="submit"> Gửi thông tin</button>
+    <button type="reset"> Nhập lại</button>
+  </div>
+  </form>
+</div>
+</body>
+</html>

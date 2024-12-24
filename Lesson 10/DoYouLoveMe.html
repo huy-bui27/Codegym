@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Love Me?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+        }
+
+        #loveMessage {
+            font-size: 48px;
+            color: red;
+            display: none; /* Ẩn thông báo ban đầu */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 24px;
+            cursor: pointer;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #yesButton {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        #noButton {
+            background-color: #f44336;
+            color: white;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Do You Love Me?</h1>
+<div id="loveMessage"><3</div>
+<button id="yesButton">YES</button>
+<button id="noButton">NO</button>
+
+<script>
+    const loveMessage = document.getElementById('loveMessage');
+    const yesButton = document.getElementById('yesButton');
+    const noButton = document.getElementById('noButton');
+
+    // Khi nhấp vào nút YES
+    yesButton.addEventListener('click', () => {
+        loveMessage.style.display = 'block'; // Hiển thị thông báo
+    });
+
+    // Khi di chuột lên nút NO
+    noButton.addEventListener('mouseover', () => {
+        // Tạo vị trí ngẫu nhiên trên màn hình
+        const randomX = Math.random() * (window.innerWidth - noButton.offsetWidth);
+        const randomY = Math.random() * (window.innerHeight - noButton.offsetHeight);
+        noButton.style.position = 'absolute'; // Đặt vị trí tuyệt đối
+        noButton.style.left = `${randomX}px`; // Di chuyển sang vị trí ngẫu nhiên
+        noButton.style.top = `${randomY}px`;
+    });
+</script>
+
+</body>
+</html>

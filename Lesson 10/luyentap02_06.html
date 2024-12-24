@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const a = parseFloat(prompt("Nhập hệ số a:"));
+    const b = parseFloat(prompt("Nhập hệ số a:"));
+    let x;
+    if (isNaN(a) || isNaN(b)) {
+        alert("Vui lòng nhập các giá trị hợp lệ cho hai cạnh kề (phải là số dương).")
+    } else if (a === 0) {
+        if (b === 0) {
+            alert("Phương trình có vô số nghiệm.")
+        } else {
+            alert("Phương trình vô nghiệm.")
+        }
+    } else {
+        x = -(b / a);
+        alert("Nghiệm của phương trình: x = " + x);
+    }
+</script>
+</body>
+</html>

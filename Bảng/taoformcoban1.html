@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sở thích của bạn</title>
+    <style>
+        body {
+            background-color: paleturquoise;
+            font-family: sans-serif;
+        }
+        .container {
+            background-color: white;
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid gray;
+        }
+        .header {
+            background-color: orangered;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 1.2em;
+        }
+        label {
+            color: navy;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"] {
+            width: calc(100% - 10px); /* Adjust for padding */
+            padding: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+        .hobby {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .hobby label {
+            color: orangered;
+            display: inline-flex;
+            align-items: center;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: lightgray;
+            border: 1px solid gray;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+      SỞ THÍCH CỦA BẠN
+  </div>
+<form method="post" action="">
+    <label for="yourname">Họ và tên</label><br>
+    <input type="text" id="yourname" name="yourname"><br>
+    <label for="email">Email</label><br>
+    <input type="email" id="email" name="email"><br>
+    <lable>Sở thích</lable>
+    <div class="hobby">
+        <label><input type="checkbox" name="hobby" value="Thể thao">Thể thao</label>
+        <label><input type="checkbox" name="hobby" value="Âm nhạc">Âm nhạc</label>
+        <label><input type="checkbox" name="hobby" value="Lướt web">Lướt web</label>
+        <label><input type="checkbox" name="hobby" value="Chơi game">Chơi game</label>
+        <label><input type="checkbox" name="hobby" value="Du lịch">Du lịch</label>
+        <label><input type="checkbox" name="hobby" value="Điện ảnh">Điện ảnh</label>
+        <label><input type="checkbox" name="hobby" value="Đọc sách">Đọc sách</label>
+    </div>
+    <div class="buttons">
+        <button type="submit"> Gửi thông tin</button>
+        <button type="reset"> Nhập lại</button>
+    </div>
+</form>
+</div>
+</body>
+</html>

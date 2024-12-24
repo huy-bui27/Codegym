@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lịch</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed; /* Ensures equal column widths */
+    }
+    th,td{
+      border: 2px solid darkgrey;
+      text-align: center;
+      padding: 8px;
+      font-size: 14px; /* Responsive font size */
+    }
+    th {
+      border: 2px solid white;
+    }
+    .ngay {
+      font-size: 20px; /* Larger font size for dates */
+    }
+    .tuan {
+      font-size: 12px; /* Smaller font size for week numbers */
+      vertical-align:baseline;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 400px) {
+      table { font-size: 14px; } /* Smaller overall font size for narrow screens */
+      .ngay { font-size: 18px; } /* Slightly smaller date font size */
+    }
+    .a1{
+      text-align: center;
+      color: blue;
+    }
+    .a2{
+      color: #d61b06;
+    }
+  </style>
+</head>
+<body>
+<h1 class="a1">Tháng 10 - October</h1>
+<table>
+  <tr>
+    <th style="background: #d61b06">C.Nhật</th>
+    <th style="background: yellow">T.Hai</th>
+    <th style="background: yellow">T.Ba</th>
+    <th style="background: yellow">T.Tư</th>
+    <th style="background: yellow">T.Năm</th>
+    <th style="background: yellow">T.Sáu</th>
+    <th style="background: blue">T.Bảy</th>
+  </tr>
+  <tr>
+    <td class="a2">Sun</td>
+    <td>Mon</td>
+    <td>Tue</td>
+    <td>Wed</td>
+    <td>Thu</td>
+    <td>Fri</td>
+    <td style="color:blue">Sat</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><span class="ngay">1</span><span class="tuan">13</span></td>
+    <td><span class="ngay">2</span><span class="tuan">14</span></td>
+    <td><span class="ngay" style="color:blue">3</span><span class="tuan">15</span></td>
+  </tr>
+  <tr>
+    <td><span class="ngay" style="color: #d61b06">4</span><span class="tuan">16</span></td>
+    <td><span class="ngay">5</span><span class="tuan">17</span></td>
+    <td><span class="ngay">6</span><span class="tuan">18</span></td>
+    <td><span class="ngay">7</span><span class="tuan">19</span></td>
+    <td><span class="ngay">8</span><span class="tuan">20</span></td>
+    <td><span class="ngay">9</span><span class="tuan">21</span></td>
+    <td><span class="ngay" style="color:blue">10</span><span class="tuan">22</span></td>
+  </tr>
+  <tr>
+    <td><span class="ngay" style="color: #d61b06">11</span><span class="tuan">23</span></td>
+    <td><span class="ngay">12</span><span class="tuan">24</span></td>
+    <td><span class="ngay">13</span><span class="tuan">25</span></td>
+    <td><span class="ngay">14</span><span class="tuan">26</span></td>
+    <td><span class="ngay">15</span><span class="tuan">27</span></td>
+    <td><span class="ngay">16</span><span class="tuan">28</span></td>
+    <td><span class="ngay" style="color:blue">17</span><span class="tuan">29</span></td>
+  </tr>
+  <tr>
+    <td><span class="ngay" style="color: #d61b06">18</span><span class="tuan">1.9</span></td>
+    <td><span class="ngay">19</span><span class="tuan">2</span></td>
+    <td><span class="ngay">20</span><span class="tuan">3</span></td>
+    <td><span class="ngay">21</span><span class="tuan">4</span></td>
+    <td><span class="ngay">22</span><span class="tuan">5</span></td>
+    <td><span class="ngay">23</span><span class="tuan">6</span></td>
+    <td><span class="ngay" style="color:blue">24</span><span class="tuan">7</span></td>
+  </tr>
+  <tr>
+    <td><span class="ngay" style="color: #d61b06">25</span><span class="tuan">8</span></td>
+    <td><span class="ngay">26</span><span class="tuan">9</span></td>
+    <td><span class="ngay">27</span><span class="tuan">10</span></td>
+    <td><span class="ngay">28</span><span class="tuan">11</span></td>
+    <td><span class="ngay">29</span><span class="tuan">12</span></td>
+    <td><span class="ngay">30</span><span class="tuan">13</span></td>
+    <td><span class="ngay" style="color:blue">31</span><span class="tuan">14</span></td>
+  </tr>
+</table>
+</body>
+</html>

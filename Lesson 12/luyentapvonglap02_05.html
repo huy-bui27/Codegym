@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  const principal = parseFloat(prompt("Nhập số tiền ban đầu (VNĐ):"));
+  const rate = parseFloat(prompt("Nhập lãi suất hàng tháng (%):"));
+  const months = parseFloat(prompt("Nhập số tháng cho vay: "));
+
+  let totalAmount = principal;
+  for (let i = 1; i <= months; i++) {
+    totalAmount += totalAmout * (rate/100);
+  }
+  alert(`Tổng số tiền sau ${months} tháng là: ${totalAmount.toFixed(2)} VNĐ`);
+</script>
+</body>
+</html>

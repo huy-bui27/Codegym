@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  debugger;
+    let width = 20;
+    let height = 7
+    let output = "";
+    for (let i = 1; i <= height; i++) {
+        let row = '';
+        for (let j = 1; j <= width; j++) {
+            if (i === 1 || j === 1 || i === height || j === width) {
+                row += '*';
+            } else {
+                row +=' ';
+            }
+        }
+        output += row + "<br>";
+    }
+    document.write(output);
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hãy Thử Đoán Xem!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Hãy Thử Đoán Xem!</h1>
+<button id="playButton">Chơi</button>
+<div id="message"></div>
+
+<script>
+    document.getElementById('playButton').addEventListener('click', startGame);
+
+    function startGame() {
+        // Làm mới thông điệp
+        document.getElementById('message').innerText = '';
+
+        // Bước 1: Nhập khoảng cho số ngẫu nhiên
+        let min = parseInt(prompt("Nhập số nhỏ nhất:"));
+        let max = parseInt(prompt("Nhập số lớn nhất:"));
+
+        if (isNaN(min) || isNaN(max) || min >= max) {
+            alert("Vui lòng nhập khoảng hợp lệ.");
+            return;
+        }
+
+        // Bước 2: Chọn số ngẫu nhiên trong khoảng
+        let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        // Bước 3: Bắt đầu vòng đoán
+        let guessed = false;
+
+        while (!guessed) {
+            let userGuess = parseInt(prompt("Nhập giá trị bạn đoán:"));
+
+            if (isNaN(userGuess)) {
+                alert("Vui lòng nhập một số hợp lệ.");
+                continue;
+            }
+
+            // Bước 4: So sánh giá trị
+            if (userGuess === randomNumber) {
+                document.getElementById('message').innerText = "Chúc mừng! Bạn đã đoán đúng số " + randomNumber + "!";
+                guessed = true;
+            } else if (userGuess < randomNumber) {
+                alert("Số bạn đoán nhỏ hơn. Hãy thử lại!");
+            } else {
+                alert("Số bạn đoán lớn hơn. Hãy thử lại!");
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

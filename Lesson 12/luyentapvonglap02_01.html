@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n1 = 0, n2 = 1, next;
+    const num = parseInt(prompt("Enter number"));
+    for (let i = 1; i < num; i++) {
+        next = n1 + n2;
+        n1 = n2;
+        n2 = next
+        document.write(n1 + "<br>");
+    }
+</script>
+</body>
+</html>

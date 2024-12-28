@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Kích thước (độ cao) của trái tim
+    const size = 6;
+
+    // Vòng lặp để in hình trái tim
+    for (let i = size / 2; i < size; i += 2) {
+        let line = "";
+
+// In khoảng trắng bên trái
+        for (let j = 1; j < size - i; j += 2) {
+            line += " ";
+        }
+
+// In nửa trái của trái tim
+        for (let j = 1; j <= i; j++) {
+            line += "*";
+        }
+
+// In khoảng trắng giữa trái tim
+        for (let j = 1; j <= size - i; j++) {
+            line += " ";
+        }
+
+// In nửa phải của trái tim
+        for (let j = 1; j <= i; j++) {
+            line += "*";
+        }
+
+        console.log(line);
+    }
+
+    // Phần dưới (hình tam giác) của trái tim
+    for (let i = size; i >= 1; i--) {
+        let line = "";
+
+// In khoảng trắng bên trái
+        for (let j = 0; j < size - i; j++) {
+            line += " ";
+        }
+
+// In các ký tự `*` tạo thành tam giác
+        for (let j = 1; j <= i * 2 - 1; j++) {
+            line += "*";
+        }
+
+        console.log(line);
+    }
+</script>
+</body>
+</html>

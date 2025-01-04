@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tìm kiếm từ</h1>
+<form id="searchForm">
+    <input id="searchTerm" placeholder="Nhập từ tiếng Anh" required type="text">
+    <button type="submit">Tìm kiếm</button>
+</form>
+<p id="result"></p>
+
+<script>
+    // Mảng chứa từ tiếng Anh và từ tiếng Việt tương ứng
+    const englishWords = ["hello", "world", "apple", "banana", "orange"];
+    const vietnameseWords = ["xin chào", "thế giới", "táo", "chuối", "cam"];
+
+    // Xử lý sự kiện khi form được gửi
+    document.getElementById("searchForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Ngăn chặn việc gửi form
+
+        const searchTerm = document.getElementById("searchTerm").value.toLowerCase(); // Lấy từ người dùng nhập
+        const index = englishWords.indexOf(searchTerm); // Tìm vị trí của từ trong mảng tiếng Anh
+
+        const resultElement = document.getElementById("result"); // Vùng để hiển thị kết quả
+        if (index !== -1) {
+            // Nếu tìm thấy, hiển thị từ tiếng Việt tương ứng
+            resultElement.textContent = `Từ tiếng Việt: ${vietnameseWords[index]}`;
+        } else {
+            // Nếu không tìm thấy, hiển thị thông báo
+            resultElement.textContent = "Không tìm thấy từ tương ứng.";
+        }
+    });
+</script>
+</body>
+</html>

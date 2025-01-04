@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numbers = [4, 5, 7, 1, 9, 2, 12, 15];
+    let max = numbers[0];
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] > max) {
+            max = numbers[i];
+        }
+    }
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+    }
+    const average = sum / numbers.length;
+    document.write(`Giá trị lơn nhất trong mảng: ${max}, giá trị trung binh của mảng: ${average}`);
+
+</script>
+</body>
+</html>

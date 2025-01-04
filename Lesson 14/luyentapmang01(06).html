@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const numbers = [];
+    for (let i = 0; i < 10; i++) {
+        const input = prompt(`Nhập vào số nguyên thứ ${i + 1}:`);
+        numbers.push(Number(input));
+    }
+    const V = Number(prompt("Nhập số nguyên V:"));
+    if (numbers.includes(V)) {
+        document.write("V is in the array");
+    } else {
+        document.write("V is not in the array");
+    }
+    document.write("Mảng só nguyên:", numbers);
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mang = new Array(10);
+    for (let i = 0; i < 10; i++) {
+        mang[i] = parseInt(prompt(`Nhập phần tử thứ ${i + 1}:`));
+    }
+    let V = parseInt(prompt("Nhập số nguyên V:"));
+    if (mang.includes(V)) {
+        console.log(`Số ${V} có trong mảng. Đang tiến hành xóa...`);
+        let index = mang.indexOf(V);
+        for (let i = index; i < mang.length - 1; i++) {
+            mang[i] = mang[i + 1];
+        }
+        mang[mang.length - 1] = 0;
+    } else {
+        console.log(`Số ${V} không có trong mảng.`);
+    }
+    console.log("Mảng sau khi xử lý:", mang);
+</script>
+</body>
+</html>

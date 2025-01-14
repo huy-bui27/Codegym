@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  function tong(){
+    let r =parseFloat(prompt("Nhập bán kính:"));
+    function dt(){
+      let s= r*r *Math.PI;
+      document.write(`Diện tích hình tròn: ${s} <br>`);
+    }
+    dt()
+    function cv() {
+      let c = r *2 * Math.PI;
+      document.write(`Chu vi hình tròn: ${c}`);
+    }
+    cv()
+  }
+  tong()
+</script>
 </body>
 </html>

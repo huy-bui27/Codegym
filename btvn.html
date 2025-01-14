@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản Lý Cửa Hàng</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+      background-color: #F0FFF0;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="text"], input[type="number"], select {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: rgba(145, 18, 209, 0.23);
+      color: black ;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: rgba(29, 30, 99, 0.46);
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .update-btn, .delete-btn {
+      margin-left: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .update-btn:hover {
+      background-color: #0056b3;
+    }
+    .delete-btn {
+      background-color: #dc3545;
+    }
+    .delete-btn:hover {
+      background-color: #c82333;
+    }
+    .total {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .alert {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Quản Lý Cửa Hàng</h1>
+
+  <!-- Quản lý sản phẩm -->
+  <h2>Quản Lý Sản Phẩm</h2>
+  <input type="text" id="productName" placeholder="Tên sản phẩm" required>
+  <input type="number" id="productPrice" placeholder="Giá sản phẩm" required>
+  <input type="number" id="productStock" placeholder="Số lượng tồn kho" required>
+  <select id="productCategory">
+    <option value="">Chọn danh mục</option>
+    <option value="Điện tử">Điện tử</option>
+    <option value="Thời trang">Thời trang</option>
+    <option value="Gia dụng">Gia dụng</option>
+  </select>
+  <button onclick="addProduct()">Thêm Sản Phẩm</button>
+
+  <h2>Danh Sách Sản Phẩm</h2>
+  <ul id="productList"></ul>
+  <div class="total" id="totalValue">Tổng Giá Trị: 0 VNĐ</div>
+  <div class="alert" id="stockAlert"></div>
+</div>
+
+<script>
+  let totalPrice = 0;
+  let productList = [];
+
+  function addProduct() {
+    const name = document.getElementById('productName').value;
+    const price = parseFloat(document.getElementById('productPrice').value);
+    const stock = parseInt(document.getElementById('productStock').value);
+    const category = document.getElementById('productCategory').value;
+
+    if (name && !isNaN(price) && !isNaN(stock) && category) {
+      const product = { name, price, stock, category };
+      productList.push(product);
+      updateProductList();
+      clearInputs();
+    } else {
+      alert('Vui lòng nhập đầy đủ thông tin sản phẩm.');
+    }
+  }
+
+  function updateProductList() {
+    const productListElement = document.getElementById('productList');
+    productListElement.innerHTML = '';
+    totalPrice = 0;
+    let alertMessage = '';
+
+    productList.forEach((product, index) => {
+      totalPrice += product.price * product.stock;
+      const li = document.createElement('li');
+      li.innerHTML = `${product.name} - ${product.price} VNĐ - Tồn kho: ${product.stock} - Danh mục: ${product.category}
+                <button class="update-btn" onclick="updateProduct(${index})">Cập Nhật</button>
+                <button class="delete-btn" onclick="deleteProduct(${index})">Xóa</button>`;
+      productListElement.appendChild(li);
+    });
+
+    document.getElementById('totalValue').textContent = `Tổng Giá Trị: ${totalPrice} VNĐ`;
+
+    // Kiểm tra tồn kho
+    productList.forEach(product => {
+      if (product.stock < 5) { // Mức tối thiểu
+        alertMessage = 'Cảnh báo: Một số sản phẩm có tồn kho dưới mức tối thiểu!';
+      }
+    });
+
+    document.getElementById('stockAlert').textContent = alertMessage;
+  }
+
+  function deleteProduct(index) {
+    productList.splice(index, 1);
+    updateProductList();
+  }
+
+  function updateProduct(index) {
+    const newPrice = prompt('Cập nhật giá sản phẩm:', productList[index].price);
+    const newStock = prompt('Cập nhật số lượng tồn kho:', productList[index].stock);
+
+    if (newPrice !== null && !isNaN(newPrice) && newStock !== null && !isNaN(newStock)) {
+      productList[index].price = parseFloat(newPrice);
+      productList[index].stock = parseInt(newStock);
+      updateProductList();
+    }
+  }
+
+  function clearInputs() {
+    document.getElementById('productName').value = '';
+    document.getElementById('productPrice').value = '';
+    document.getElementById('productStock').value = '';
+    document.getElementById('productCategory').value = '';
+  }
+</script>
+
+</body>
+</html>

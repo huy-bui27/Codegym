@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Mobile {
+        constructor(brand) {
+            this.brand = brand;
+            this.battery = 100;
+            this.isOn = false;
+            this.draftMessage = "";
+            this.inbox = [];
+            this.sentMessages = [];
+        }
+
+
+        powerOn() {
+            this.isOn = true;
+            console.log(`${this.brand} đã bật.`);
+        }
+        chargeBattery() {
+            this.battery = 100;
+            console.log(`${this.brand} đã được xạc đầy pin.`);
+        }
+
+
+        draftMessageContent(content) {
+            if (!this.isOn) {
+                console.log(`${this.brand} đang tắt. Không thể soạn tin nhắn.`);
+                return;
+            }
+            this.draftMessage = content;
+            this.battery--;
+            console.log(`Soạn tin nhắn: "${this.draftMessage}".`);
+        }
+
+
+        sendMessage(receiver) {
+            if (!this.isOn) {
+                console.log(`${this.brand} đang tắt. Không thể gửi tin nhắn.`);
+                return;
+            }
+            if (this.draftMessage) {
+                receiver.receiveMessage(this.draftMessage);
+                this.sentMessages.push(this.draftMessage);
+                this.draftMessage = ""; // Xóa tin nhắn đã gửi
+                this.battery--;
+                console.log(`Gửi tin nhắn: "${this.sentMessages[this.sentMessages.length - 1]}" đến ${receiver.brand}.`);
+            } else {
+                console.log(`Không có tin nhắn nào để gửi.`);
+            }
+        }
+
+
+        receiveMessage(message) {
+            this.inbox.push(message);
+            console.log(`${this.brand} đã nhận tin nhắn: "${message}".`);
+            this.battery--;
+        }
+
+
+        viewInbox() {
+            if (!this.isOn) {
+                console.log(`${this.brand} đang tắt. Không thể xem hộp thư đến.`);
+                return;
+            }
+            console.log(`Hộp thư đến của ${this.brand}: ${this.inbox.join(", ")}`);
+            this.battery--;
+        }
+
+
+        viewSentMessages() {
+            if (!this.isOn) {
+                console.log(`${this.brand} đang tắt. Không thể xem tin đã gửi.`);
+                return;
+            }
+            console.log(`Tin đã gửi từ ${this.brand}: ${this.sentMessages.join(", ")}`);
+            this.battery--;
+        }
+    }
+
+
+    let nokia = new Mobile("Nokia");
+    let iphone = new Mobile("iPhone");
+
+
+    nokia.powerOn();
+    iphone.powerOn();
+
+
+    nokia.draftMessageContent("Chào bạn, đây là tin nhắn từ Nokia.");
+    nokia.sendMessage(iphone);
+
+
+    iphone.viewInbox();
+</script>
+</body>
+</html>

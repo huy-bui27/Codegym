@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let star1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let star2 = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo']
+     function findStar2(){
+        let starName = prompt("Nhập tên ngôi sao:");
+        if(starName){
+            starName = starName.trim();
+            const index = star1.indexOf(starName);
+            if (index !== -1){
+                document.write(`Chòm sao của ngôi sao ${starName} là ${star2[index]}`);
+                }else{
+                document.write(`Không tìm thấy ngôi sao có tên "${starName}".`);
+            }
+        }
+     }
+     findStar2();
+</script>
 </body>
 </html>

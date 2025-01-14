@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  function reverseArray(arr){
+    return arr.slice().reverse();
+  }
+  let inputArray = [1,2,3,4,5];
+  let reversedArray = reverseArray(inputArray);
+  document.write(`Mảng ban đầu: ${inputArray}<br>`);
+  document.write(`Mảng sau khi đảo ngược: ${reversedArray}`);
+</script>
 </body>
 </html>

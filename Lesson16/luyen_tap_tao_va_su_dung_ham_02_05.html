@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  function min(){
+    const a = parseFloat(prompt("Nhap a:"));
+    const b = parseFloat(prompt("Nhap b:"));
+    const c = parseFloat(prompt("Nhap c:"));
+    if (a<b){
+      if( a<c){
+        document.write("Số a là số nhỏ nhất: "+a+"<br>");
+      }else{
+        document.write("Số c là số nhỏ nhất:"+c+"<br>");
+      }
+    }else if( b<a){
+      if( b<c){
+        document.write("Số b là số nhỏ nhất:"+b+"<br>");
+    }else{
+      document.write("Số c là số nhỏ nhất:"+c+"<br>");}
+    }
+  }
+  min()
+</script>
 </body>
 </html>

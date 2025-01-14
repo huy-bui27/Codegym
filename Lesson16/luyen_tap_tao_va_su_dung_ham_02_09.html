@@ -5,6 +5,18 @@
     <title>Title</title>
 </head>
 <body>
-
+<script>
+    function kt(charArray, char) {
+        if (charArray.includes(char)){
+            return char;
+        }else{
+            return -1;
+        }
+    }
+    let character = ['a', 'b', 'c', 'a', 'd', 'a'];
+    let check = 'a';
+    let result= kt(character, check);
+    document.write(`Ký tự '${check}' ${result !== -1 ? 'có' : 'không có'} trong mảng.`);
+</script>
 </body>
 </html>

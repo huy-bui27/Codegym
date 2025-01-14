@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let inputArr = prompt("Nhập mảng:");
+    let charArr = inputArr.split(",");
+    for (let i = 0; i < charArr.length; i++) {
+        if (charArr[i].trim() === "-") {
+            charArr[i] = "_";
+        }
+    }
+    let result = charArr.join(',');
+    document.write("Chuỗi khi được thay thế:" + result);
+</script>
 </body>
 </html>

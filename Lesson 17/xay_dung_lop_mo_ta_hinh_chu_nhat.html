@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas height="300" id="rectangCanvas" style="border:1px solid #d3d3d3;" width="500"></canvas>
+<script>
+    let Rectangle = function (x, y) {
+        this.x = x;
+        this.y = y;
+
+        this.getX = function () {
+            return this.x;
+        }
+        this.getY = function () {
+            return this.y;
+        }
+        this.setX = function (x) {
+            this.x = x;
+        }
+        this.getArea = function () {
+            return this.x * this.y;
+        }
+        this.getPerimeter = function () {
+            return (this.x + this.y) * 2;
+        }
+        this.draw = function (canvasId) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'lightblue';
+            ctx.fillRect(50, 50, this.y, this.x);
+        }
+    };
+    let rectangle = new Rectangle(34, 30);
+    rectangle.draw('rectangCanvas');
+    rectangle.setX(60);
+    rectangle.getY(90);
+    let x = rectangle.getX();
+    rectangle.getY();
+    let area = rectangle.getArea();
+    let cv = rectangle.getPerimeter();
+    alert("Chu vi: " + cv);
+    alert("Diện tích: " + area);
+    rectangle.draw('rectangCanvas');
+</script>
+</body>
+</html>

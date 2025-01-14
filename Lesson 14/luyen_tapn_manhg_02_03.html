@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  let arr = ['c', 's', 'c', '2', '6', '1'];
+  let count =0;
+  for (let i = 0; i < arr.length; i++) {
+    if(!isNaN(arr[i]) && arr[i] !=='') {
+      count++;
+    }
+  }
+  document.write("Kích thước của mảng: " + arr.length +"<br>");
+  document.write("Số ký tự trong mảng: "+ count);
+</script>
 </body>
 </html>

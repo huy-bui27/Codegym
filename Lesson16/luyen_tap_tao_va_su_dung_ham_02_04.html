@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+function isDigit(char) {
+    return char. length === 1 && !isNaN(char);
+}
+const inputChar = prompt("Nhập một ký tự để kiểm tra:");
+if (isDigit(inputChar)) {
+    document.write(inputChar + " là ký tự số.");
+}else{
+    document.write(inputChar + "không là ký tự số.");
+}
+</script>
 </body>
 </html>

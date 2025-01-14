@@ -6,9 +6,15 @@
 </head>
 <body>
 <script>
-  let a = +prompt("Nhập chuỗi 1:");
-  let b = +prompt("Nhập chuỗi 1:");
-  
+ let inputString = prompt("Nhập chuỗi để đếm:");
+ inputString = inputString.trim();
+ if (inputString === 0) {
+     document.write(" Số từ trong chuỗi là 0");
+     } else {
+     let word = inputString.split(/\s+/);
+     let wordCount= word.length;
+     document.write("Số từ trong chuỗi: "+ wordCount);
+ }
 </script>
 </body>
 </html>

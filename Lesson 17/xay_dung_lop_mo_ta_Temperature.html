@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let Temperature = function (c) {
+    if (c < -273) {
+      throw new Error("Giá trị nhiệt độ không hợp lệ! Nhiệt độ không thể thấp hơn -273 độ C.");
+    }
+    this.c = c;
+    this.getF = function () {
+      return (c*1.8) + 32;
+    }
+    this.getKevin = function () {
+      return c+273.15;
+    }
+  }
+  try{
+  let temperature = new Temperature(25);
+  let f = temperature.getF();
+  let kevin=temperature.getKevin();
+  document.write("Nhiệt độ F: " + f + "<br>");
+  document.write("Nhiệt độ K: : " + kevin + "<br>");
+  }catch(error){
+    document.write(error.message);
+  }
+</script>
+</body>
+</html>

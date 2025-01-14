@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Di Chuyển Nhân Vật</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            border: 1px solid #000;
+            background-color: #fff;
+        }
+        h1 {
+            position: absolute;
+            top: 20px;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<h1>Game Di Chuyển Nhân Vật</h1>
+<canvas id="gameCanvas" width="500" height="500"></canvas>
+<script>
+    class Character {
+        constructor(x, y, size, image) {
+            this.x = x;
+            this.y = y;
+            this.size = size;
+            this.image = new Image();
+            this.image.src = image; // Sử dụng URL hình ảnh
+        }
+        draw(context) {
+            context.drawImage(this.image, this.x, this.y, this.size, this.size); // Sửa lỗi ở đây
+        }
+        move(direction) {
+            const step = 10;
+            switch (direction) {
+                case 'ArrowUp':
+                    this.y = Math.max(0, this.y - step);
+                    break;
+                case 'ArrowDown':
+                    this.y = Math.min(500 - this.size, this.y + step);
+                    break;
+                case 'ArrowLeft':
+                    this.x = Math.max(0, this.x - step);
+                    break;
+                case 'ArrowRight':
+                    this.x = Math.min(500 - this.size, this.x + step);
+                    break;
+            }
+        }
+    }
+
+    const canvas = document.getElementById('gameCanvas');
+    const context = canvas.getContext('2d');
+    const characterImageURL = 'https://banner2.cleanpng.com/20240229/bfu/transparent-pokemon-pikachu-with-fire-illustration-from-pokemon-1710858139154.webp'; // Sử dụng URL hình ảnh
+    const character = new Character(250, 250, 50, characterImageURL);
+
+    function draw() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        character.draw(context);
+    }
+
+    document.addEventListener('keydown', function (event) {
+        character.move(event.key);
+        draw();
+    });
+
+    character.image.onload = draw; // Vẽ nhân vật sau khi hình ảnh đã tải
+</script>
+</body>
+</html>

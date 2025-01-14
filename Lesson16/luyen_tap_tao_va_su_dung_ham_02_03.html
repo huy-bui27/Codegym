@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+  function gt() {
+      let a = parseFloat(prompt("Nhập số cần giao thừa:"));
+      if( a < 0){
+        return "Giai thừa không xác định cho số âm.";
+      }
+      if(a===0){
+        return 1;
+      }
+      let b= 1;
+      for(let i=1;i<=a;i++){
+        b*=i;
+      }
+      document.write(`Giai thừa của ${a} là ${b}`);
+    }
+    gt()
+</script>
 </body>
 </html>
